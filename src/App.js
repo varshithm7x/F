@@ -12,8 +12,15 @@ import AboutUs from './components/AboutUs';
 import Help from './components/Help';
 import './App.css';
 
+// Debug logging
+console.log('All env vars:', process.env);
+console.log('NODE_ENV:', process.env.NODE_ENV);
 const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 console.log('Clerk Key:', clerkPubKey);
+
+if (!clerkPubKey) {
+  throw new Error('Missing Clerk Publishable Key - Check Environment Variables');
+}
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -28,6 +35,10 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function App() {
+  if (!clerkPubKey) {
+    return <div>Error: Missing Clerk Configuration</div>;
+  }
+
   return (
     <ClerkProvider publishableKey={clerkPubKey}>
       <ThemeProvider>
