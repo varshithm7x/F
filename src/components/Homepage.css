@@ -1,0 +1,340 @@
+/* First, let's import a better font combination */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+.homepage {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme variables */
+.homepage.dark {
+    --bg-color: rgba(0, 0, 0, 1);
+    --text-color: #ffffff;
+    --text-secondary: #888;
+    --text-tertiary: #666;
+    --card-bg: #1a1a1a;
+    --border-color: #333;
+    --heading-color: #ffffff;
+    --feature-bg: #111111;
+    --button-bg: #FFFFFF;
+    --button-text: #000000;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light theme variables */
+.homepage.light {
+    --bg-color: rgba(255, 255, 255, 1);
+    --text-color: #000000;
+    --text-secondary: #666;
+    --text-tertiary: #666;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --heading-color: #000000;
+    --feature-bg: #f5f5f5;
+    --button-bg: #000000;
+    --button-text: #FFFFFF;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    background-color: var(--bg-color);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+    color: var(--heading-color);
+    opacity: 1 !important;
+}
+
+.hero-content p:first-of-type {
+    color: #00A3FF;  /* Bright blue */
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 300;
+    opacity: 1 !important;
+}
+
+.hero-content p:last-of-type {
+    color: #00FF85;  /* Bright green */
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 300;
+    opacity: 1 !important;
+}
+
+.start-btn {
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.3s ease;
+    opacity: 1 !important;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+.features, .how-it-works {
+    padding: 12rem 2rem;
+    text-align: center;
+}
+
+.features h2, .how-it-works h2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 8rem;
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+}
+
+.feature-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item:hover {
+    opacity: 1;
+}
+
+.feature-item h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+}
+
+.feature-item p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.step {
+    text-align: center;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.step:hover {
+    opacity: 1;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Dark theme */
+.homepage.dark .step-number {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+/* Light theme */
+.homepage.light .step-number {
+    border-color: #000000;
+    color: #000000;
+}
+
+.step:hover .step-number {
+    transform: scale(1.1);
+    border-width: 3px;
+}
+
+.step h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+}
+
+.step p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Animation classes */
+.animate-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.homepage.loaded .animate-up {
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+/* Delay classes */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.8s; }
+
+/* Update responsive design */
+@media (max-width: 1200px) {
+    .feature-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .feature-items {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .features h2, .how-it-works h2 {
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+    }
+    
+    .feature-item h3, .step h3 {
+        font-size: 1.5rem;
+    }
+    
+    .feature-item p, .step p {
+        font-size: 1.1rem;
+    }
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.feature-card h3 {
+    color: var(--text-color);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+}
+
+/* Make sure all transitions are smooth */
+.homepage * {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Colored text styles with theme-specific colors */
+.homepage.dark .hero-content p:first-of-type {
+    color: #00A3FF;  /* Bright blue in dark theme */
+    opacity: 1 !important;
+}
+
+.homepage.dark .hero-content p:last-of-type {
+    color: #00FF85;  /* Bright green in dark theme */
+    opacity: 1 !important;
+}
+
+/* Black text in light theme */
+.homepage.light .hero-content p:first-of-type,
+.homepage.light .hero-content p:last-of-type {
+    color: #000000;  /* Black text in light theme */
+    opacity: 1 !important;
+}
+
+/* Base styles for the paragraphs */
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 300;
+    opacity: 1 !important;
+    transition: color 0.3s ease;
+}
+
+.logo-container {
+    /* Keep empty if not needed */
+}
+
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    top: 60px;
+}
+
+/* Remove the brightness filters since we're using different images */
+.homepage.dark .hero-logo {
+    /* Remove filter if using separate images */
+}
+
+.homepage.light .hero-logo {
+    /* Remove filter if using separate images */
+} 

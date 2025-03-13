@@ -1,0 +1,474 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.login-container.dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.login-container.light {
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.login-container.dark .login-card {
+    background: #121212;
+    border: 1px solid #333;
+}
+
+.login-container.light .login-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-container.dark .input-group input {
+    background: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+.login-container.light .input-group input {
+    background: #1e1e1e;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.login-container.dark .input-group input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.login-container.light .input-group input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.error-message {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.login-container.dark .login-button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+}
+
+.login-container.light .login-button {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+}
+
+.login-container.dark .login-button:hover {
+    background: #f0f0f0;
+}
+
+.login-container.light .login-button:hover {
+    background: #333;
+}
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.login-container.dark .divider::before,
+.login-container.dark .divider::after {
+    border-bottom: 1px solid #333;
+}
+
+.login-container.light .divider::before,
+.login-container.light .divider::after {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider span {
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.google-login-button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.login-container.dark .google-login-button {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+.login-container.light .google-login-button {
+    background: transparent;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+}
+
+.google-login-button:hover {
+    transform: translateY(-2px);
+}
+
+.login-container.dark .google-login-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.login-container.light .google-login-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.google-login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.signup-option {
+    margin-top: 1.5rem;
+    color: #888;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 5px;
+    right: 10px;
+}
+
+.toggle-signup {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.login-container.dark .toggle-signup {
+    color: #4a90e2;
+}
+
+.login-container.light .toggle-signup {
+    color: #4a90e2;
+}
+
+.toggle-signup:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+    
+    .login-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group input,
+    .login-button,
+    .google-login-button {
+        height: 44px;
+    }
+}
+
+.clerk-root {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.cl-component {
+    width: 100%;
+    position: relative;
+}
+
+.clerk-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    position: relative !important;
+    right: 15px;
+}
+
+.clerk-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.75rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.clerk-subtitle {
+    font-family: 'Space Grotesk', sans-serif !important;
+    color: #888 !important;
+    font-size: 0.95rem !important;
+}
+
+.clerk-social-button {
+    border-radius: 8px !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.clerk-primary-button {
+    width: 100% !important;
+    padding: 0.75rem !important;
+    border-radius: 8px !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    color: var(--cl-colorButtonText) !important;
+}
+
+.clerk-input {
+    width: 100% !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    transition: all 0.3s ease !important;
+}
+
+.clerk-footer-action {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 0.9rem !important;
+}
+
+/* Dark theme specific styles */
+.login-container.dark .clerk-input {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+}
+
+.login-container.light .clerk-input {
+    background: #f5f5f5 !important;
+    color: #333333 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* Update the "Secured by Clerk" box positioning and styling */
+.cl-internal-b3fm6y {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    top: auto !important;
+    transform: none !important;
+    background: #ffffff !important;
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    color: #000000 !important;
+    z-index: 1000 !important;
+    height: auto !important;
+    width: auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    white-space: nowrap !important;
+}
+
+/* Add dark theme support */
+.login-container.dark .cl-internal-b3fm6y {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Hide the default powered by element */
+.clerk-powered-by {
+    display: none !important;
+}
+
+/* Dark theme specific button styles */
+.login-container.dark .clerk-primary-button {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Light theme specific button styles */
+.login-container.light .clerk-primary-button {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Add styles for the container of the vertical box */
+.cl-card-badge-container {
+    position: absolute !important;
+    right: -80px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: auto !important;
+    pointer-events: none !important;
+}
+.cl-internal-f3y3wh {
+    position: absolute !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    z-index: 1000 !important;
+}
+
+/* Ensure Clerk form elements inherit theme colors */
+.login-container.dark .cl-formButtonPrimary {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.login-container.light .cl-formButtonPrimary {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure proper input styling in both themes */
+.login-container.dark .cl-formFieldInput {
+    background: #1e1e1e !important;
+    color: #ffffff !important;
+    border: 1px solid #333 !important;
+}
+
+.login-container.light .cl-formFieldInput {
+    background: #f5f5f5 !important;
+    color: #333333 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .login-card {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .cl-card-badge-container {
+        display: none !important;
+    }
+}
+
+/* Dark theme specific styles */
+.login-container.dark .clerk-social-button {
+    border-color: #2b2b2b !important;
+}
+
+/* Light theme specific styles */
+.login-container.light .clerk-social-button {
+    border-color: #e0e0e0 !important;
+}
+

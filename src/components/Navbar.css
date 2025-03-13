@@ -1,0 +1,313 @@
+/* Update the root transition timing */
+:root {
+    --theme-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: var(--nav-bg);
+    z-index: 1000;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: var(--theme-transition);
+    backdrop-filter: blur(10px);
+}
+
+/* Dark theme variables */
+.navbar.dark {
+    --nav-bg: rgba(0, 0, 0, 0.8);
+    --nav-text: #888;
+    --nav-text-hover: #fff;
+}
+
+/* Light theme variables */
+.navbar.light {
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --nav-text: #666;
+    --nav-text-hover: #000;
+}
+
+.nav-brand {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 45px;
+    width: 45px;
+    object-fit: contain;
+    transition: var(--theme-transition);
+    opacity: 1;
+    transform-origin: center center;
+    will-change: transform, opacity;
+}
+
+.nav-logo:hover {
+    transform: scale(1.08);
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.3, 1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: var(--theme-transition);
+    text-transform: lowercase;
+    position: relative;
+    color: var(--nav-text);
+}
+
+.nav-links a:hover {
+    color: var(--nav-text-hover);
+}
+
+/* Dark theme nav colors */
+.navbar.dark .nav-links a {
+    color: #888;
+}
+
+.navbar.dark .nav-links a:hover {
+    color: #fff;
+}
+
+/* Light theme nav colors */
+.navbar.light .nav-links a {
+    color: #000000;
+}
+
+.navbar.light .nav-links a:hover {
+    color: #444;
+}
+
+.login-btn {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: var(--theme-transition);
+    text-transform: lowercase;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Dark theme login button */
+.navbar.dark .login-btn {
+    color: #888;
+}
+
+.navbar.dark .login-btn:hover {
+    color: #fff;
+}
+
+/* Light theme login button */
+.navbar.light .login-btn {
+    color: #000000;
+}
+
+.navbar.light .login-btn:hover {
+    color: #444;
+}
+
+/* Remove these if not needed anymore */
+.login-icon {
+    display: none;
+}
+
+/* Update theme toggle styles */
+.theme-toggle-float {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.theme-toggle-float:hover {
+    background: var(--nav-bg);
+    border-color: var(--nav-text);
+}
+
+/* Add fade effect for logo change */
+.nav-brand img {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+}
+
+/* Update all transitions to use the same timing */
+.navbar *,
+.nav-logo,
+.nav-links a,
+.login-btn {
+    transition: var(--theme-transition);
+}
+
+/* Keep hover animations snappy */
+.nav-logo:hover,
+.nav-links a:hover,
+.login-btn:hover {
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.3, 1);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+    }
+
+    .nav-logo {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+/* Add these styles to your existing Navbar.css */
+
+.user-profile {
+    position: relative;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px !important;
+    cursor: pointer;
+    padding: 4px 10px !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease;
+}
+
+.navbar.dark .profile-trigger {
+    background-color: #222;
+    color: white;
+}
+
+.navbar.light .profile-trigger {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.profile-trigger:hover {
+    opacity: 0.8;
+}
+
+.profile-photo {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-initial {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px !important;
+}
+
+.navbar.dark .profile-initial {
+    background: linear-gradient(135deg, #4a90e2, #8e44ad);
+    color: white;
+}
+
+.navbar.light .profile-initial {
+    background: linear-gradient(135deg, #4a90e2, #8e44ad);
+    color: white;
+}
+
+.user-name {
+    font-size: 13px !important;
+    font-weight: 500;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    width: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+.navbar.dark .profile-dropdown {
+    background-color: #222;
+    border: 1px solid #333;
+}
+
+.navbar.light .profile-dropdown {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.profile-dropdown a,
+.profile-dropdown button {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.navbar.dark .profile-dropdown a,
+.navbar.dark .profile-dropdown button {
+    color: white;
+}
+
+.navbar.light .profile-dropdown a,
+.navbar.light .profile-dropdown button {
+    color: #333;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown button:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.sign-out-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    border-top: 1px solid;
+}
+
+.navbar.dark .sign-out-btn {
+    border-color: #333;
+}
+
+.navbar.light .sign-out-btn {
+    border-color: #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-name {
+        display: none;
+    }
+    
+    .profile-dropdown {
+        right: -10px;
+    }
+} 
