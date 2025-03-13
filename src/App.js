@@ -12,7 +12,8 @@ import AboutUs from './components/AboutUs';
 import Help from './components/Help';
 import './App.css';
 
-const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY || 'pk_test_your-actual-key-here';
+console.log('Clerk Key:', clerkPubKey);
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
