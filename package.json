@@ -2,6 +2,7 @@
   "name": "themathguy",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@clerk/clerk-react": "^4.32.5",
     "@react-oauth/google": "^0.12.1",
